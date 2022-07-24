@@ -1,0 +1,59 @@
+<div class="card" style="margin-top: 35px;margin-left: 35px;margin-right: 35px;">
+<div class="card-header">
+Add Product
+</div>
+<div class="rowcls">
+   <div class="bd-example">
+    <form [formGroup]="addproduct" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group col-space">
+            <label for="inputEmail4">Product Name</label>
+            <input formControlName="product_name" type="text" class="form-control" id="inputEmail4" placeholder="Product Name">
+            <div style="margin-bottom:0rem;color: red;" *ngIf="(f.product_name.touched || f.product_name.dirty) && f.product_name.errors">
+            <div *ngIf="f.product_name.errors.required">Product name is required</div>
+            </div>
+          </div>
+          <div class="form-group col-space">
+            <label for="inputPassword4">Price</label>
+            <input (keypress)="keyPressNumbers($event)" formControlName="product_price" type="text" class="form-control" id="inputPassword4" placeholder="Enter Price">
+            <div style="margin-bottom:0rem;color: red;" *ngIf="(f.product_price.touched || f.product_price.dirty) && f.product_price.errors">
+            <div *ngIf="f.product_price.errors.required">Product Price is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Offer Price</label>
+          <input  (keypress)="keyPressNumbers($event)"  formControlName="product_offer_price" type="text" class="form-controls" id="inputAddress" placeholder="Enter Offer Price">
+          <div style="margin-bottom:0rem;color: red;" *ngIf="(f.product_offer_price.touched || f.product_offer_price.dirty) && f.product_offer_price.errors">
+          <div *ngIf="f.product_offer_price.errors.required">Offer Price is required</div>
+          </div>
+        </div>
+        <!-- <div class="form-group">
+          <label for="inputAddress2">Upload Image</label>
+          <input (change)="imagePreview($event)" formControlName="image" type="file" class="form-controls" id="inputAddress2" >
+          <div style="margin-bottom:0rem;color: red;" *ngIf="(f.image.touched || f.image.dirty) && f.image.errors">
+          <div *ngIf="f.image.errors.required">Image is required</div>
+          </div>
+        </div> -->
+        
+        <div class="Neon Neon-theme-dragdropbox">
+          <input (change)="imagePreview($event)"  style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" 
+          name="files[]" id="filer_input2" type="file">
+          <div class="Neon-input-dragDrop"><div class="Neon-input-inner">
+            <div class="Neon-input-icon">
+              <i *ngIf="ImageSrc==''" class="fa fa-file-image-o"></i>
+              <span *ngIf="ImageSrc!=''" style="margin-bottom:2rem;"><img [src]="ImageSrc" width="80" height="80"></span>
+            </div>&nbsp;
+            <a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
+          </div>
+          <div style="margin-top:-20px;color: red;" *ngIf="(f.image.touched || f.image.dirty) && f.image.errors">
+            <div *ngIf="f.image.errors.required">Image is required</div>
+            </div>
+        <button [disabled]="addproduct.invalid" type="submit" class="btn btn-primary">
+          <span></span>{{operation}} Product
+        </button>
+      </form>
+   </div>
+</div>
+</div>
+<ngx-spinner></ngx-spinner>

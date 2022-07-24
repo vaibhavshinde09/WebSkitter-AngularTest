@@ -1,0 +1,118 @@
+.card
+{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 25%);
+    transition: 0.3s;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #FFF;
+    background-clip: border-box;
+    border: 0 solid rgba(34,41,47,.125);
+    border-radius: 0.428rem;
+}
+/* .card {
+    margin-bottom: 2rem;
+    transition: all .3s ease-in-out,background 0s,color 0s,border-color 0s;
+} */
+.btn-addproduct {
+ background-color: #7367F0!important; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.btn {padding: 10px 24px;}
+
+
+.table:not(.table-dark):not(.table-light) thead:not(.table-dark) th {
+    background-color: #F3F2F7;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+table {
+    border-collapse: collapse;
+}
+.table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+th {
+    text-align: inherit;
+}
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+}
+.table td, .table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.table-bordered thead th {
+    border-bottom-width: 2px;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+.table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+.rowcls{
+padding-left: 24px;
+padding-right: 20px;
+}
+.table-responsive
+{
+    overflow: auto;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.imgcls
+{
+    display:inline-block;
+}
+.btn-logout {
+    background-color: #5a596c!important; /* Green */
+     border: none;
+     color: white;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
+   }

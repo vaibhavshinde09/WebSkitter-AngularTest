@@ -1,0 +1,44 @@
+
+<div class="card" style="margin-top:50px;">
+    <div class="rowcls">
+        <div>
+            <button routerLink="/user/add-product" type="submit" class="btn btn-addproduct">Add Prodcut
+            </button>
+            <span style="float: right"><a href="#" class="btn btn-logout" (click)="logout()" >Logout</a></span>
+        </div>
+    <div class="table-responsive">
+        <table id="DataTables_Table_0" class="table table-bordered">
+            <thead>
+                <tr>
+                <th>SR No.</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Offer Price</th>
+                <th></th>
+                <th>Action</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="getproductData.length!=0">
+                <tr *ngFor="let res of getproductData;index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{res.product_name}}</td>                    
+                    <td>{{res.product_price}}</td>                    
+                    <td>{{res.product_offer_price}}</td>  
+                    <td>
+                        <img [src]="res.url" width="20" height="20" class="imgcls">
+                    </td>   
+                    <td>
+                    <button  class="btn btn-danger" (click)="Deleteproduct(res)">Delete</button>
+                    &nbsp;
+                    <button  class="btn btn-primary" (click)="Editproduct(res)">Edit</button>
+                    </td>           
+                </tr>
+            </tbody>
+            <tbody *ngIf="getproductData.length==0">
+                No Data Found
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+<ngx-spinner></ngx-spinner>
